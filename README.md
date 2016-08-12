@@ -1,6 +1,6 @@
-###This is the final project of Getting and Cleaning data
+This is the final project of Getting and Cleaning data
 
-###Of all the raw data given in the zip file, 7 tables are used in the data processing:
+Of all the raw data given in the zip file, 7 tables are used in the data processing:
 'test_sub.txt/train_sub.txt' identify the subject who perform the activiey(1,2,3...)
 'test_x.txt/train_x.txt' record the feature vectors
 'test_y.txt/train_y.txt' identify the activities(Walking,Laying...)
@@ -9,7 +9,7 @@
 The data cleaning process here focusing on producing two indiviual clean tables -test and train first and then bind them
 veritically to generate the final dataset. Though the steps described in the assignment requirment is to first column binding 6 tables and then subsetting, I perfer to do the mean/std subsetting in the very beginning believing dropping the unused columns earilier can be slightly more efficient. 
 
-###See below the detailed script and explaination
+See below for the detailed script and explaination
 
 Step A : download files from folders.
 test_sub  <- read.table("./test/subject_test.txt")
@@ -70,6 +70,7 @@ make participant column factors
 dataset <-rbind(test,train)
 dataset[,2] <- as.factor(dataset[,2])
 
+
 Step G: Create the second, independent tidy data set(average of each variable for 
 each activity and each subject)based on the last step. 
 
@@ -81,3 +82,32 @@ newtable <- arrange(newtable, activity, participant)
 Step H: save the file
 
 write.table(newtable,file="./secondset.txt",row.name=FALSE )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
